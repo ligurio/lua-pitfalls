@@ -1,0 +1,35 @@
+title: Lua Pitfalls
+description: >-
+  Pitfalls and anti-patterns when programming in Lua, grouped by Lua runtime
+  and the static analyzers that can detect them.
+lang: en
+
+# GitHub Pages overrides url/baseurl automatically during deployment.
+# `relative_url` in the templates keeps local builds and subpath deploys working.
+url: ""
+baseurl: ""
+
+# GitHub Pages uses kramdown + Rouge for syntax highlighting.
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+collections:
+  pitfalls:
+    output: true
+    permalink: /pitfalls/:slug/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: _pitfalls
+    values:
+      layout: pitfall

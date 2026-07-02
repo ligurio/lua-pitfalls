@@ -1,0 +1,110 @@
+:root {
+  --fg: #1f2430;
+  --fg-muted: #565a66;
+  --bg: #ffffff;
+  --accent: #000080;
+  --border: #d8dbe2;
+  --code-bg: #f6f6f8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.wrap {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.site-title:hover { color: var(--accent); }
+
+.site-subtitle {
+  margin-left: 0.75rem;
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+}
+
+main { padding: 1.5rem 1.25rem 3rem; }
+
+h1, h2, h3 { line-height: 1.3; }
+
+a { color: var(--accent); }
+
+.breadcrumbs { margin: 0 0 1rem; }
+.breadcrumbs a { text-decoration: none; }
+
+.pitfall .description p { margin-top: 0; }
+
+.pitfall-list { list-style: none; padding: 0; }
+.pitfall-entry { margin-bottom: 1.5rem; }
+.pitfall-title { font-weight: 600; font-size: 1.05rem; }
+.pitfall-description { color: var(--fg-muted); margin: 0.25rem 0; }
+
+.tags { margin: 1rem 0; }
+.tag-group { margin: 0.25rem 0; }
+.tag-label { color: var(--fg-muted); font-weight: 600; margin-right: 0.35rem; }
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  margin: 0.15rem 0.25rem 0.15rem 0;
+  border-radius: 0.9rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid var(--border);
+}
+.tag-runtime { background: #eef2ff; color: #1e40af; }
+.tag-analyzer { background: #e6ffe6; color: #166534; }
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+}
+
+code {
+  background: var(--code-bg);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+  font-size: 0.9em;
+}
+
+pre code { background: none; padding: 0; }
+
+/* Rouge syntax highlighting (adapted from "github" theme). */
+.highlight .k, .highlight .kd { color: #000080; font-weight: 600; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .ss { color: #d14; }
+.highlight .n { color: inherit; }
+.highlight .nf, .highlight .nb { color: #0086b3; }
+.highlight .c, .highlight .c1, .highlight .cm { color: #998; font-style: italic; }
+.highlight .c1 { color: #998; font-style: italic; }
+.highlight .mi, .highlight .mf { color: #099; }
+.highlight .kr { color: #000080; font-weight: 600; }
+.highlight .err { color: #a61717; }
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+}

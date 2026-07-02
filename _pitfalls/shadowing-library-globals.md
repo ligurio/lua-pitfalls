@@ -1,0 +1,43 @@
+---
+layout: pitfall
+title: "Shadowing the standard library"
+description: >-
+  Declaring a `local` variable that has the same name as a global from the
+  standard library (e.g. `table`, `string`, `print`) silently shadows it for
+  the rest of the scope, breaking every later use. All Lua runtimes are
+  affected, so the analyzers are the only safety net.
+runtime:
+  - Lua 5.1
+  - Lua 5.2
+  - Lua 5.3
+  - Lua 5.4
+  - LuaJIT
+analyzers:
+  - luacheck
+  - lua-language-server
+  - selene
+---
+
+```lua
+local string = "some value"  -- shadows the string library for this file
+
+-- Later... attempt to index a string value (use 'string.sub' on 'string')
+-- Runtime error: attempt to index a string value (global 'string')
+local substring = string.sub("hello", 1, 3)
+```
+
+The local `string` makes every later call such as `string.format`,
+`string.gsub` or `string.sub` fail with a confusing "attempt to index"
+error, or silently behave differently when the shadowing value happens to be
+a table.
+
+Avoid shadowing standard library names:
+
+```lua
+local value = "some value"
+
+local substring = string.sub("hello", 1, 3)
+```
+
+`luacheck` warns about shadowing a standard library global, `LuaLS` and
+`selene` report the redeclared built-in as well.

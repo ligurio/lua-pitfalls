@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<section class="pitfall-list">
+  <h1>Pitfalls</h1>
+  <ul>
+    {% for item in site.pitfalls %}
+      <li class="pitfall-entry">
+        <a class="pitfall-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        <p class="pitfall-description">{{ item.description }}</p>
+        {% include tags.html entry=item %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="by-runtime">
+  <h2>By Lua runtime</h2>
+  <ul>
+    {% for entry in site.data.runtimes %}
+      {% assign runtime = entry[1] %}
+      {% assign docs = site.pitfalls | where: "runtime", runtime.name %}
+      {% unless docs.size == 0 %}
+        <li>
+          <strong>{{ runtime.name }}</strong>
+          {% if runtime.url %}<a href="{{ runtime.url }}">(info)</a>{% endif %}
+          <ul>
+            {% for item in docs %}
+              <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="by-analyzer">
+  <h2>By static analyzer</h2>
+  <ul>
+    {% for entry in site.data.analyzers %}
+      {% assign analyzer_key = entry[0] %}
+      {% assign analyzer = entry[1] %}
+      {% assign docs = site.pitfalls | where: "analyzers", analyzer_key %}
+      {% unless docs.size == 0 %}
+        <li>
+          <strong>{{ analyzer.name }}</strong>
+          {% if analyzer.url %}<a href="{{ analyzer.url }}">(info)</a>{% endif %}
+          <ul>
+            {% for item in docs %}
+              <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</section>

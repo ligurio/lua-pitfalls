@@ -1,0 +1,15 @@
+luacheck:
+  name: luacheck
+  url: https://luacheck.readthedocs.io/
+
+lua-language-server:
+  name: lua-language-server (LuaLS)
+  url: https://luals.github.io/
+
+selene:
+  name: selene
+  url: https://kampfkarren.github.io/selene/
+
+luavela:
+  name: Luavela
+  url: https://github.com/luavela/luavela
