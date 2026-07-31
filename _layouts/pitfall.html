@@ -11,7 +11,7 @@ layout: default
 
   <section class="description">
     <h2>Problem</h2>
-    <p>{{ page.description }}</p>
+    {{ page.description | markdownify }}
   </section>
 
   <section class="demo">

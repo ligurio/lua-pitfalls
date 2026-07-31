@@ -39,7 +39,7 @@ layout: default
       {% for item in pitfalls %}
         <li class="pitfall-entry">
           <a class="pitfall-title" href="{{ item.url | relative_url }}">{{ item.path | split: "/" | last | remove: ".md" }} — {{ item.title }}</a>
-          <p class="pitfall-description">{{ item.description }}</p>
+          <div class="pitfall-description">{{ item.description | markdownify }}</div>
           {% include tags.html entry=item %}
         </li>
       {% endfor %}
