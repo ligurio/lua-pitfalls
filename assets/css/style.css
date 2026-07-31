@@ -108,3 +108,31 @@ pre code { background: none; padding: 0; font-size: 0.95rem; }
   color: var(--fg-muted);
   font-size: 0.85rem;
 }
+
+table.matrix {
+  border-collapse: collapse;
+  margin: 0.5rem 0 1.5rem;
+  width: 100%;
+}
+
+.matrix th,
+.matrix td {
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.6rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.matrix th {
+  background: #f2f3f7;
+  font-weight: 600;
+}
+
+.matrix .matrix-rowhead {
+  text-align: left;
+}
+
+.matrix .matrix-yes {
+  color: #166534;
+  font-weight: 700;
+}

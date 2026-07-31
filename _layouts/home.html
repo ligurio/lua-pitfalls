@@ -17,45 +17,54 @@ layout: default
 
 <section class="by-runtime">
   <h2>By Lua runtime</h2>
-  <ul>
-    {% for entry in site.data.runtimes %}
-      {% assign runtime = entry[1] %}
-      {% assign docs = site.pitfalls | where: "runtime", runtime.name %}
-      {% unless docs.size == 0 %}
-        {% assign href = '/runtimes/' | append: runtime.slug | append: '/' | relative_url %}
-        <li>
-          <strong><a href="{{ href }}">{{ runtime.name }}</a></strong>
-          {% if runtime.url %}<a href="{{ runtime.url }}">(info)</a>{% endif %}
-          <ul>
-            {% for item in docs %}
-              <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
-      {% endunless %}
-    {% endfor %}
-  </ul>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th class="matrix-rowhead">Pitfall</th>
+        {% for entry in site.data.runtimes %}
+          {% assign runtime = entry[1] %}
+          {% assign href = '/runtimes/' | append: runtime.slug | append: '/' | relative_url %}
+          <th><a href="{{ href }}">{{ runtime.name }}</a></th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in site.pitfalls %}
+        <tr>
+          <td class="matrix-rowhead"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></td>
+          {% for entry in site.data.runtimes %}
+            {% assign col = entry[0] %}
+            <td>{% if item.runtime contains col %}<span class="matrix-yes" title="Specific to {{ col }}">✓</span>{% endif %}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
 
 <section class="by-analyzer">
   <h2>By static analyzer</h2>
-  <ul>
-    {% for entry in site.data.analyzers %}
-      {% assign analyzer_key = entry[0] %}
-      {% assign analyzer = entry[1] %}
-      {% assign docs = site.pitfalls | where: "analyzers", analyzer_key %}
-      {% unless docs.size == 0 %}
-        {% assign href = '/analyzers/' | append: analyzer.slug | append: '/' | relative_url %}
-        <li>
-          <strong><a href="{{ href }}">{{ analyzer.name }}</a></strong>
-          {% if analyzer.url %}<a href="{{ analyzer.url }}">(info)</a>{% endif %}
-          <ul>
-            {% for item in docs %}
-              <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
-      {% endunless %}
-    {% endfor %}
-  </ul>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th class="matrix-rowhead">Pitfall</th>
+        {% for entry in site.data.analyzers %}
+          {% assign analyzer = entry[1] %}
+          {% assign href = '/analyzers/' | append: analyzer.slug | append: '/' | relative_url %}
+          <th><a href="{{ href }}">{{ analyzer.name }}</a></th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in site.pitfalls %}
+        <tr>
+          <td class="matrix-rowhead"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></td>
+          {% for entry in site.data.analyzers %}
+            {% assign col = entry[0] %}
+            <td>{% if item.analyzers contains col %}<span class="matrix-yes" title="Detectable by {{ col }}">✓</span>{% endif %}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
