@@ -1,15 +1,23 @@
 luacheck:
   name: luacheck
+  slug: luacheck
   url: https://luacheck.readthedocs.io/
-
-lua-language-server:
-  name: lua-language-server (LuaLS)
-  url: https://luals.github.io/
+  description: >-
+    A widely used static analyzer and linter for Lua. Reports undefined
+    globals, unused variables and shadowed standard library globals.
 
 selene:
   name: selene
+  slug: selene
   url: https://kampfkarren.github.io/selene/
+  description: >-
+    An opinionated linter for Lua written in Rust. Flags undefined globals,
+    shadowed built-ins and other style and correctness issues.
 
-luavela:
-  name: Luavela
-  url: https://github.com/luavela/luavela
+emmylua-analyzer:
+  name: EmmyLua Analyzer
+  slug: emmylua-analyzer
+  url: https://emmylua.github.io/
+  description: >-
+    A Lua static analyzer and language support bundled with the EmmyLua
+    plugin for IntelliJ IDEA.

@@ -14,7 +14,6 @@ runtime:
   - LuaJIT
 analyzers:
   - luacheck
-  - lua-language-server
   - selene
 ---
 
@@ -39,5 +38,4 @@ local value = "some value"
 local substring = string.sub("hello", 1, 3)
 ```
 
-`luacheck` warns about shadowing a standard library global, `LuaLS` and
-`selene` report the redeclared built-in as well.
+`luacheck` and `selene` report the shadowed standard library global.

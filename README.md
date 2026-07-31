@@ -3,10 +3,13 @@
 Pitfalls and anti-patterns when programming in Lua.
 
 This is a Jekyll site hosted on GitHub Pages. Each file in
-[`_pitfalls/`](_pitfalls/) is a single Markdown page describing
-one pitfall: a short description, a code demo with syntax
+[`_pitfalls/`](_pitfalls/) is a single Markdown page describing one
+pitfall: a short description, a code demo with syntax
 highlighting, and two tag categories - the Lua runtime(s) affected
-and the static analyzers that can catch the problem.
+and the static analyzers that can catch the problem. Every tag
+links to its own page (see [`runtimes/`](runtimes/) and
+[`analyzers/`](analyzers/)) listing all pitfalls with that tag
+plus information about the runtime or analyzer.
 
 ## Project layout
 
@@ -14,9 +17,11 @@ and the static analyzers that can catch the problem.
 _config.yml          # Site config: collections, kramdown + Rouge, defaults.
 _data/runtimes.yml   # Canonical list of Lua runtimes (tag metadata).
 _data/analyzers.yml  # Canonical list of static analyzers (tag metadata).
-_layouts/            # Page templates (default, home, pitfall).
+_layouts/            # Page templates (default, home, pitfall, tag-page).
 _includes/           # Reusable snippets (tags).
 _pitfalls/           # One Markdown file per pitfall, rendered as a page.
+runtimes/            # One Markdown file per Lua runtime tag page.
+analyzers/           # One Markdown file per static analyzer tag page.
 assets/css/          # Styles (including Rouge syntax colors).
 index.md             # Home page listing all pitfalls.
 ```
@@ -41,11 +46,35 @@ analyzers:
 ```
 
 - `runtime` — one or more entries. Pick from `_data/runtimes.yml`
-  (e.g. `Lua 5.1`, `Lua 5.2`, `Lua 5.3`, `Lua 5.4`, `LuaJIT`).
+  (e.g. `Lua 5.1`, `Lua 5.2`, `Lua 5.3`, `Lua 5.4`, `Lua 5.5`, `LuaJIT`).
 - `analyzers` — one or more entries from `_data/analyzers.yml`
-  (e.g. `luacheck`, `lua-language-server`, `selene`, `luavela`).
+  (e.g. `luacheck`, `selene`, `emmylua-analyzer`).
 - Keep names exactly as in the `_data/*.yml` files so the tags resolve to
   links and the home-page grouping works.
+
+## Tag pages
+
+Every runtime and analyzer from `_data/*.yml` has a page listing the pitfalls
+with that tag plus a description and a link to the official site. Each tag page
+is a tiny Markdown file:
+
+- `runtimes/lua-5.1.md` → `Lua 5.1`
+- `analyzers/luacheck.md` → `luacheck`
+
+Front matter of a tag page:
+
+```markdown
+---
+layout: tag-page
+kind: runtime    # "runtime" or "analyzer"
+tag: Lua 5.2     # key from _data/runtimes.yml or _data/analyzers.yml
+title: Lua 5.2
+---
+```
+
+When adding a new runtime or analyzer, add an entry to the corresponding
+`_data/*.yml` file (with `name`, `slug`, `url`, `description`) **and** a tag
+page file like the ones above.
 
 ## Running locally
 

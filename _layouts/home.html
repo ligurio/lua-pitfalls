@@ -22,8 +22,9 @@ layout: default
       {% assign runtime = entry[1] %}
       {% assign docs = site.pitfalls | where: "runtime", runtime.name %}
       {% unless docs.size == 0 %}
+        {% assign href = '/runtimes/' | append: runtime.slug | append: '/' | relative_url %}
         <li>
-          <strong>{{ runtime.name }}</strong>
+          <strong><a href="{{ href }}">{{ runtime.name }}</a></strong>
           {% if runtime.url %}<a href="{{ runtime.url }}">(info)</a>{% endif %}
           <ul>
             {% for item in docs %}
@@ -44,8 +45,9 @@ layout: default
       {% assign analyzer = entry[1] %}
       {% assign docs = site.pitfalls | where: "analyzers", analyzer_key %}
       {% unless docs.size == 0 %}
+        {% assign href = '/analyzers/' | append: analyzer.slug | append: '/' | relative_url %}
         <li>
-          <strong>{{ analyzer.name }}</strong>
+          <strong><a href="{{ href }}">{{ analyzer.name }}</a></strong>
           {% if analyzer.url %}<a href="{{ analyzer.url }}">(info)</a>{% endif %}
           <ul>
             {% for item in docs %}

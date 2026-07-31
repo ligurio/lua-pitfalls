@@ -9,9 +9,9 @@ runtime:
   - Lua 5.2
   - Lua 5.3
   - Lua 5.4
+  - Lua 5.5
 analyzers:
   - luacheck
-  - lua-language-server
   - selene
 ---
 
@@ -38,5 +38,4 @@ local unpack = table.unpack or unpack
 local a, b, c = unpack(values)
 ```
 
-`luacheck` reports this as an undefined global, `LuaLS` reports an unknown
-global field, and `selene` flags the undefined global as well.
+`luacheck` and `selene` both flag the undefined global.

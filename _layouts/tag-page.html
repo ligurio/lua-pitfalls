@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+{% if page.kind == "runtime" %}
+  {% assign meta = site.data.runtimes[page.tag] %}
+  {% assign pitfalls = site.pitfalls | where: "runtime", page.tag %}
+  {% assign category = "Lua runtime" %}
+{% else %}
+  {% assign meta = site.data.analyzers[page.tag] %}
+  {% assign pitfalls = site.pitfalls | where: "analyzers", page.tag %}
+  {% assign category = "Static analyzer" %}
+{% endif %}
+
+<nav class="breadcrumbs">
+  <a href="{{ '/' | relative_url }}">← All pitfalls</a>
+</nav>
+
+<article class="tag-page">
+  <h1>{{ meta.name | default: page.tag }}</h1>
+
+  <p class="tag-kind">{{ category }}</p>
+
+  {% if meta.description %}
+    <p class="tag-description">{{ meta.description }}</p>
+  {% endif %}
+
+  {% if meta.url %}
+    <p class="tag-site">
+      <a href="{{ meta.url }}">Official website</a>
+    </p>
+  {% endif %}
+
+  <h2>Pitfalls</h2>
+  {% if pitfalls.size == 0 %}
+    <p>No pitfalls listed for this tag yet.</p>
+  {% else %}
+    <ul class="pitfall-list">
+      {% for item in pitfalls %}
+        <li class="pitfall-entry">
+          <a class="pitfall-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          <p class="pitfall-description">{{ item.description }}</p>
+          {% include tags.html entry=item %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</article>

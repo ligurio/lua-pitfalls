@@ -1,19 +1,48 @@
 Lua 5.1:
   name: Lua 5.1
+  slug: lua-5.1
   url: https://www.lua.org/manual/5.1/
+  description: >-
+    Long-standing reference implementation of Lua, still the baseline for
+    LuaJIT and many embedded environments. Uses global unpack and setfenv.
 
 Lua 5.2:
   name: Lua 5.2
+  slug: lua-5.2
   url: https://www.lua.org/manual/5.2/
+  description: >-
+    Introduced the _ENV upvalue, goto and the __len metamethod, and moved
+    several functions (unpack, loadstring) into the table and string
+    libraries.
 
 Lua 5.3:
   name: Lua 5.3
+  slug: lua-5.3
   url: https://www.lua.org/manual/5.3/
+  description: >-
+    Introduced integers, bitwise operators and the utf8 library, changing the
+    semantics of division and the floor division operator.
 
 Lua 5.4:
   name: Lua 5.4
+  slug: lua-5.4
   url: https://www.lua.org/manual/5.4/
+  description: >-
+    Reference implementation of Lua. Added const variables, to-be-closed
+    variables and generational garbage collection.
+
+Lua 5.5:
+  name: Lua 5.5
+  slug: lua-5.5
+  url: https://www.lua.org/manual/5.5/
+  description: >-
+    The current reference implementation of Lua. Adds table.create and
+    several new C API and library features.
 
 LuaJIT:
   name: LuaJIT
+  slug: luajit
   url: https://luajit.org/
+  description: >-
+    A Just-In-Time compiler for Lua 5.1. Mostly Lua 5.1-compatible with a few
+    extensions and differences in error semantics.

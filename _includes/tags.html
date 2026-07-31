@@ -7,7 +7,8 @@
       {% for name in current.runtime %}
         {% assign runtime = site.data.runtimes[name] %}
         {% if runtime %}
-          <a class="tag tag-runtime" href="{{ runtime.url }}">{{ runtime.name }}</a>
+          {% assign href = '/runtimes/' | append: runtime.slug | append: '/' | relative_url %}
+          <a class="tag tag-runtime" href="{{ href }}">{{ runtime.name }}</a>
         {% else %}
           <span class="tag tag-runtime">{{ name }}</span>
         {% endif %}
@@ -21,7 +22,8 @@
       {% for name in current.analyzers %}
         {% assign analyzer = site.data.analyzers[name] %}
         {% if analyzer %}
-          <a class="tag tag-analyzer" href="{{ analyzer.url }}">{{ analyzer.name }}</a>
+          {% assign href = '/analyzers/' | append: analyzer.slug | append: '/' | relative_url %}
+          <a class="tag tag-analyzer" href="{{ href }}">{{ analyzer.name }}</a>
         {% else %}
           <span class="tag tag-analyzer">{{ name }}</span>
         {% endif %}

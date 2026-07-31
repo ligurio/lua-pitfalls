@@ -9,6 +9,10 @@ lang: en
 url: ""
 baseurl: ""
 
+# Pretty URLs for tag pages: /runtimes/lua-5.1/, /analyzers/luacheck/.
+# The `pitfalls` collection has its own permalink below.
+permalink: pretty
+
 # GitHub Pages uses kramdown + Rouge for syntax highlighting.
 markdown: kramdown
 highlighter: rouge
