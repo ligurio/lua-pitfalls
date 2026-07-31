@@ -55,7 +55,6 @@ a { color: var(--accent); }
 
 .pitfall .description p { margin-top: 0; }
 
-.pitfall-list { list-style: none; padding: 0; }
 .pitfall-entry { margin-bottom: 1.5rem; }
 .pitfall-title { font-weight: 600; font-size: 1.05rem; }
 .pitfall-description { color: var(--fg-muted); margin: 0.25rem 0; }

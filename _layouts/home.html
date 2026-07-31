@@ -4,15 +4,12 @@ layout: default
 
 <section class="pitfall-list">
   <h1>Pitfalls</h1>
-  <ul>
-    {% for item in site.pitfalls %}
-      <li class="pitfall-entry">
-        <a class="pitfall-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-        <p class="pitfall-description">{{ item.description }}</p>
-        {% include tags.html entry=item %}
-      </li>
-    {% endfor %}
-  </ul>
+  {% for item in site.pitfalls %}
+    <div class="pitfall-entry">
+      <a class="pitfall-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      <p class="pitfall-description">{{ item.description }}</p>
+    </div>
+  {% endfor %}
 </section>
 
 <section class="by-runtime">
