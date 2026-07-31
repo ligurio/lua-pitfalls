@@ -3,7 +3,7 @@
 <section class="tags">
   {% if current.runtime and current.runtime.size > 0 %}
     <p class="tag-group">
-      <span class="tag-label">Lua runtime:</span>
+      <span class="tag-label">Exists in:</span>
       {% for name in current.runtime %}
         {% assign runtime = site.data.runtimes[name] %}
         {% if runtime %}
@@ -18,7 +18,7 @@
 
   {% if current.analyzers and current.analyzers.size > 0 %}
     <p class="tag-group">
-      <span class="tag-label">Static analyzers:</span>
+      <span class="tag-label">Detected by:</span>
       {% for name in current.analyzers %}
         {% assign analyzer = site.data.analyzers[name] %}
         {% if analyzer %}
