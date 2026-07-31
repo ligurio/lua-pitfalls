@@ -80,7 +80,7 @@ a { color: var(--accent); }
   padding: 0.1rem 0.55rem;
   margin: 0.15rem 0.25rem 0.15rem 0;
   border-radius: 0.9rem;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-decoration: none;
   border: 1px solid var(--border);
 }
@@ -99,10 +99,10 @@ code {
   background: var(--code-bg);
   border-radius: 4px;
   padding: 0.1rem 0.3rem;
-  font-size: 0.92em;
+  font-size: 1.1em;
 }
 
-pre code { background: none; padding: 0; font-size: 0.95rem; }
+pre code { background: none; padding: 0; font-size: 1rem; }
 
 /* Rouge syntax highlighting (adapted from "github" theme). */
 .highlight .k, .highlight .kd { color: #000080; font-weight: 600; }
@@ -132,7 +132,7 @@ table.matrix {
   border: 1px solid var(--border);
   padding: 0.35rem 0.6rem;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .matrix th {
