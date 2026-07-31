@@ -28,12 +28,15 @@ index.md             # Home page listing all pitfalls.
 
 ## Adding a pitfall
 
-Create `_pitfalls/<name>.md` with this front matter:
+Create `_pitfalls/L100N.md` — the file name **is** the pitfall ID (`L1001`,
+`L1002`, ...). Set an explicit `permalink` in the front matter that matches the
+ID (Jekyll lowercases slugs, so this is required to keep the exact case):
 
 ```markdown
 ---
 layout: pitfall
 title: "Short, descriptive title"
+permalink: /p/L1001/
 description: >-
   One or two sentences explaining the problem.
 runtime:
@@ -44,6 +47,9 @@ analyzers:
   - selene
 ---
 ```
+
+Pick the next free number for the ID and use it both in the file name and in
+`permalink`. The page is served at `/p/L1001/`.
 
 - `runtime` — one or more entries. Pick from `_data/runtimes.yml`
   (e.g. `Lua 5.1`, `Lua 5.2`, `Lua 5.3`, `Lua 5.4`, `Lua 5.5`, `LuaJIT`).

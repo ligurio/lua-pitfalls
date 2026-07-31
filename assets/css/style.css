@@ -55,6 +55,19 @@ a { color: var(--accent); }
 
 .pitfall .description p { margin-top: 0; }
 
+.pitfall-id {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: 0.4rem;
+  background: #eef2ff;
+  color: #1e40af;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
 .pitfall-entry { margin-bottom: 1.5rem; }
 .pitfall-title { font-weight: 600; font-size: 1.05rem; }
 .pitfall-description { color: var(--fg-muted); margin: 0.25rem 0; }

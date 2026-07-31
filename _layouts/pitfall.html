@@ -7,7 +7,7 @@ layout: default
 </nav>
 
 <article class="pitfall">
-  <h1>{{ page.title }}</h1>
+  <h1><span class="pitfall-id">{{ page.path | split: "/" | last | remove: ".md" }}</span> {{ page.title }}</h1>
 
   <section class="description">
     <h2>Problem</h2>

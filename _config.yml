@@ -26,7 +26,9 @@ kramdown:
 collections:
   pitfalls:
     output: true
-    permalink: /pitfalls/:slug/
+    # Each pitfall file sets its own `permalink: /p/L100N/` in the front matter
+    # (preserves the exact case of the ID); this is only a fallback.
+    permalink: /p/:slug/
 
 defaults:
   - scope:

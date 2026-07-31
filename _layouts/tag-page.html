@@ -38,7 +38,7 @@ layout: default
     <ul class="pitfall-list">
       {% for item in pitfalls %}
         <li class="pitfall-entry">
-          <a class="pitfall-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          <a class="pitfall-title" href="{{ item.url | relative_url }}">{{ item.path | split: "/" | last | remove: ".md" }} — {{ item.title }}</a>
           <p class="pitfall-description">{{ item.description }}</p>
           {% include tags.html entry=item %}
         </li>
