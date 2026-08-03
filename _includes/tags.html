@@ -1,7 +1,20 @@
 {% assign current = include.entry | default: page %}
 
 <section class="tags">
-  {% if current.runtime and current.runtime.size > 0 %}
+  {% if current.platform and current.platform.size > 0 %}
+    <p class="tag-group">
+      <span class="tag-label">Exists in:</span>
+      {% for name in current.platform %}
+        {% assign platform = site.data.platforms[name] %}
+        {% if platform %}
+          {% assign href = '/' | append: platform.slug | append: '/' | relative_url %}
+          <a class="tag tag-platform" href="{{ href }}">{{ platform.name }}</a>
+        {% else %}
+          <span class="tag tag-platform">{{ name }}</span>
+        {% endif %}
+      {% endfor %}
+    </p>
+  {% elsif current.runtime and current.runtime.size > 0 %}
     <p class="tag-group">
       <span class="tag-label">Exists in:</span>
       {% for name in current.runtime %}

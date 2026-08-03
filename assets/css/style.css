@@ -38,8 +38,22 @@ body {
 
 .site-title:hover { color: var(--accent); }
 
+.site-nav {
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+
+.site-nav a {
+  margin-right: 1rem;
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-nav a:hover { color: var(--accent); }
+
 .site-subtitle {
-  margin-left: 0.75rem;
+  margin-left: 0;
   color: var(--fg-muted);
   font-size: 0.9rem;
 }
@@ -86,6 +100,7 @@ a { color: var(--accent); }
 }
 .tag-runtime { background: #eef2ff; color: #1e40af; }
 .tag-analyzer { background: #e6ffe6; color: #166534; }
+.tag-platform { background: #fff7e6; color: #92400e; }
 
 pre {
   background: var(--code-bg);

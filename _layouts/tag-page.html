@@ -6,10 +6,14 @@ layout: default
   {% assign meta = site.data.runtimes[page.tag] %}
   {% assign pitfalls = site.pitfalls | where: "runtime", page.tag %}
   {% assign category = "Lua runtime" %}
-{% else %}
+{% elsif page.kind == "analyzer" %}
   {% assign meta = site.data.analyzers[page.tag] %}
   {% assign pitfalls = site.pitfalls | where: "analyzers", page.tag %}
   {% assign category = "Static analyzer" %}
+{% elsif page.kind == "platform" %}
+  {% assign meta = site.data.platforms[page.tag] %}
+  {% assign pitfalls = site[page.collection] %}
+  {% assign category = "Platform" %}
 {% endif %}
 
 <nav class="breadcrumbs">
@@ -19,7 +23,9 @@ layout: default
 <article class="tag-page">
   <h1>{{ meta.name | default: page.tag }}</h1>
 
-  <p class="tag-kind">{{ category }}</p>
+  {% unless page.kind == "platform" %}
+    <p class="tag-kind">{{ category }}</p>
+  {% endunless %}
 
   {% if meta.description %}
     <p class="tag-description">{{ meta.description }}</p>

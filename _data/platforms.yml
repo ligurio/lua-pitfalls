@@ -1,0 +1,15 @@
+OpenResty:
+  name: OpenResty
+  slug: openresty
+  url: https://openresty.org/
+  description: >-
+    A web platform based on nginx and LuaJIT that exposes the ngx.* API to Lua
+    modules handling HTTP requests.
+
+Tarantool:
+  name: Tarantool
+  slug: tarantool
+  url: https://www.tarantool.io/
+  description: >-
+    An in-memory database and application server with an embedded Lua runtime
+    that exposes the box.* API.

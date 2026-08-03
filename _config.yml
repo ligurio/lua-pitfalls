@@ -1,7 +1,7 @@
 title: Lua Pitfalls
 description: >-
-  Pitfalls and anti-patterns when programming in Lua, grouped by Lua runtime
-  and the static analyzers that can detect them.
+  Pitfalls and anti-patterns when programming in Lua, grouped by Lua runtime,
+  static analyzers and platform sections (OpenResty, Tarantool).
 lang: en
 
 # GitHub Pages overrides url/baseurl automatically during deployment.
@@ -29,6 +29,14 @@ collections:
     # Each pitfall file sets its own `permalink: /p/L100N/` in the front matter
     # (preserves the exact case of the ID); this is only a fallback.
     permalink: /p/:slug/
+  openresty:
+    output: true
+    # Files set their own `permalink: /o/O100N/` to keep the case of the ID.
+    permalink: /o/:slug/
+  tarantool:
+    output: true
+    # Files set their own `permalink: /t/T100N/` to keep the case of the ID.
+    permalink: /t/:slug/
 
 defaults:
   - scope:
@@ -37,5 +45,13 @@ defaults:
       layout: default
   - scope:
       path: _pitfalls
+    values:
+      layout: pitfall
+  - scope:
+      path: _openresty
+    values:
+      layout: pitfall
+  - scope:
+      path: _tarantool
     values:
       layout: pitfall
