@@ -4,10 +4,10 @@ description: >-
   static analyzers and platform sections (OpenResty, Tarantool).
 lang: en
 
-# GitHub Pages overrides url/baseurl automatically during deployment.
-# `relative_url` in the templates keeps local builds and subpath deploys working.
-url: ""
-baseurl: ""
+# Site is a GitHub Pages project page served at /lua-pitfalls/, so links built
+# with `relative_url` get this baseurl prefix.
+url: "https://ligurio.github.io"
+baseurl: "/lua-pitfalls"
 
 # Pretty URLs for tag pages: /runtimes/lua-5.1/, /analyzers/luacheck/.
 # The `pitfalls` collection has its own permalink below.

@@ -121,7 +121,8 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-The site is then available at <http://localhost:4000>. To do a one-off build
+The site is then available at <http://localhost:4000/lua-pitfalls/>. To do a
+one-off build
 into `_site/`:
 
 ```sh
