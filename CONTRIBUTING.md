@@ -132,3 +132,20 @@ bundle exec jekyll build
 The `Gemfile` uses the [`github-pages`](https://github.com/github/pages-gem)
 gem, which pins Jekyll and all plugins to exactly the versions GitHub Pages
 uses in production, so the local build is identical to the deployed one.
+
+### Using Nix
+
+Alternatively, [`shell.nix`](shell.nix) provides a ready-made environment with
+Jekyll and the Lua runtimes used to check the pitfall examples (Lua 5.1-5.4,
+LuaJIT 2.0/2.1 and the OpenResty LuaJIT). Enter it with:
+
+```sh
+nix-shell
+```
+
+Inside the shell, build or serve the site with `jekyll` directly:
+
+```sh
+jekyll serve --livereload
+jekyll build
+```
