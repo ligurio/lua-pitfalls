@@ -32,7 +32,7 @@ index.md             # Home page listing all pitfalls.
 
 ## Adding a pitfall
 
-Create `_pitfalls/L100N.md` — the file name **is** the pitfall ID (`L1001`,
+Create `_pitfalls/L100N.md` - the file name **is** the pitfall ID (`L1001`,
 `L1002`, ...). OpenResty and Tarantool pitfalls use `_openresty/O100N.md` and
 `_tarantool/T100N.md` with IDs prefixed `O` and `T`. Set an explicit
 `permalink` in the front matter that matches the ID (Jekyll lowercases slugs,
@@ -59,11 +59,11 @@ platform:                 # only for platform pitfalls
 Pick the next free number for the ID and use it both in the file name and in
 `permalink`. The page is served at `/p/L1001/`, `/o/O1001/` or `/t/T1001/`.
 
-- `runtime` — one or more entries. Pick from `_data/runtimes.yml`
+- `runtime` - one or more entries. Pick from `_data/runtimes.yml`
   (e.g. `Lua 5.1`, `Lua 5.2`, `Lua 5.3`, `Lua 5.4`, `Lua 5.5`, `LuaJIT`).
-- `analyzers` — one or more entries from `_data/analyzers.yml`
+- `analyzers` - one or more entries from `_data/analyzers.yml`
   (e.g. `luacheck`, `selene`, `emmylua-analyzer`).
-- `platform` — one or more entries from `_data/platforms.yml`
+- `platform` - one or more entries from `_data/platforms.yml`
   (`OpenResty`, `Tarantool`).
 - Keep names exactly as in the `_data/*.yml` files so the tags resolve to
   links and the section pages work.
