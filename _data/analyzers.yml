@@ -21,3 +21,13 @@ emmylua-analyzer:
   description: >-
     A Lua static analyzer and language support bundled with the EmmyLua
     plugin for IntelliJ IDEA.
+
+semgrep:
+  name: semgrep
+  slug: semgrep
+  url: https://github.com/ligurio/semgrep-rules/
+  description: >-
+    A pattern-based static analysis tool that searches source code for
+    user-defined rules. Custom Lua rules cover language pitfalls and the
+    Tarantool box.* API.
+
