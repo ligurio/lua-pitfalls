@@ -37,9 +37,9 @@ layout: default
     </p>
   {% endif %}
 
-  <h2>Pitfalls</h2>
+  <h2>{% if page.kind == "analyzer" %}Diagnostics{% else %}Pitfalls{% endif %}</h2>
   {% if pitfalls.size == 0 %}
-    <p>No pitfalls listed for this tag yet.</p>
+    <p>{% if page.kind == "analyzer" %}No diagnostics listed for this analyzer yet.{% else %}No pitfalls listed for this tag yet.{% endif %}</p>
   {% else %}
     <ul class="pitfall-list">
       {% for item in pitfalls %}
