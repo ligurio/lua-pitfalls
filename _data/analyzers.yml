@@ -17,10 +17,11 @@ selene:
 emmylua-analyzer:
   name: EmmyLua Analyzer
   slug: emmylua-analyzer
-  url: https://emmylua.github.io/
+  url: https://github.com/EmmyLuaLs/emmylua-analyzer-rust
   description: >-
-    A Lua static analyzer and language support bundled with the EmmyLua
-    plugin for IntelliJ IDEA.
+    A Lua language server and static analyzer written in Rust, driven by the
+    EmmyLua annotation dialect. Reports type, nil-safety, dead-code and other
+    diagnostics over the Language Server Protocol.
 
 semgrep:
   name: semgrep
